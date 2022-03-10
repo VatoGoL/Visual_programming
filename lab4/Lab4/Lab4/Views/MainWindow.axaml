@@ -1,0 +1,264 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Lab4.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        Width="450" Height="450"
+		x:Class="Lab4.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Lab4">
+
+	<Grid  ColumnDefinitions="1*,1*,1*,1*" RowDefinitions="1*,1*,1*,1*">
+		<TextBox Focusable="False" 
+				 IsUndoEnabled="False" 
+				 
+				 Name="textBox"
+				 
+				 FontSize="66" 
+				 Text="{Binding Text}"
+				 
+				 VerticalContentAlignment="Center"
+				 HorizontalContentAlignment="Right" 
+				 
+				 Grid.Row="0"
+				 Grid.Column="0"
+				 Grid.ColumnSpan="4"
+				 
+				 Margin="1"
+				 ></TextBox>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonI"
+				
+				FontSize="36"
+				Content="I"
+				
+				Grid.Row="1"
+				Grid.Column="0"
+				
+				Width="112.5"
+				Height="112.5"
+				Margin="1"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonL"
+				
+				FontSize="36"
+				Content="L"
+				
+				Grid.Row="1"
+				Grid.Column="1"
+				
+				Width="112.5"
+				Height="112.5"
+				Margin="0,0,0.5,0"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonM"
+				
+				FontSize="36"
+				Content="M"
+				
+				Grid.Row="1"
+				Grid.Column="2"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonMul"
+				
+				FontSize="36"
+				Content="*"
+				
+				Grid.Row="1"
+				Grid.Column="3"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonV"
+				
+				FontSize="36"
+				Content="V"
+				
+				Grid.Row="2"
+				Grid.Column="0"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonC"
+				
+				FontSize="36"
+				Content="C"
+				
+				Grid.Row="2"
+				Grid.Column="1"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonAdd"
+				
+				FontSize="36"
+				Content="+"
+				
+				Grid.Row="2"
+				Grid.Column="2"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonDiv"
+				
+				FontSize="36"
+				Content="/"
+				
+				Grid.Row="2"
+				Grid.Column="3"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonX"
+				
+				FontSize="36"
+				Content="X"
+				
+				Grid.Row="3"
+				Grid.Column="0"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonD"
+				
+				FontSize="36"
+				Content="D"
+				
+				Grid.Row="3"
+				Grid.Column="1"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonSub"
+				
+				Grid.Row="3"
+				Grid.Column="2"
+				
+				FontSize="36"
+				Content="-"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		<Button VerticalContentAlignment="Center"
+				HorizontalContentAlignment="Center"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				
+				Name="buttonEqual"
+				
+				FontSize="36"
+				Content="="
+				
+				Grid.Row="3"
+				Grid.Column="3"
+				
+				Width="112.5"
+				Height="112.5"
+				
+				Command="{Binding ClickButton}"
+				CommandParameter="{Binding $self.Content}"
+				></Button>
+		
+	</Grid>
+    
+
+</Window>
