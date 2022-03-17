@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="150"
+        Width="450" Height="150"
+		x:Class="Lab5.Views.RegexWindow"
+        Title="Regex Window">
+	<StackPanel Orientation="Vertical">
+		<TextBox Height="50"
+				 FontSize="18"
+				 VerticalContentAlignment="Center"
+				 Name="RegText"
+				 Text="{Binding RegularValue}>"></TextBox>
+		<Button Width="450"
+				Height="50"
+				Content="Ok"
+				HorizontalContentAlignment="Center"
+				VerticalContentAlignment="Center"
+				FontSize="18"
+				Name="OkButton"></Button>
+		<Button Width="450"
+				Height="50"
+				Content="Cancel"
+				HorizontalContentAlignment="Center"
+				VerticalContentAlignment="Center"
+				FontSize="18"
+				Name="CancelButton"></Button>
+	</StackPanel>
+</Window>

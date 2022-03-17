@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Lab5.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        Width="450" Height="450"
+		x:Class="Lab5.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Lab5">
+
+	<StackPanel Orientation="Vertical">
+		<StackPanel Orientation="Horizontal">
+			<StackPanel Orientation="Vertical">
+				<TextBox Text="{Binding InputText}"
+						 Width="225"
+						 Height="390"
+						 Name="InText"
+						 AcceptsReturn="True"
+						 TextWrapping="Wrap"></TextBox>
+				<Button Content="Open File"
+						Width="225"
+						HorizontalContentAlignment="Center"
+						Name="OpFile"></Button>
+			</StackPanel>
+			<StackPanel Orientation="Vertical">
+				<TextBox Text="{Binding OutputText}"
+						 Width="225"
+						 Height="390"
+						 Name="OutText"
+						 AcceptsReturn="True"
+						 TextWrapping="Wrap"
+						 Focusable="False"></TextBox>
+				<Button Content="Save File" 
+						Width="225" 
+						HorizontalContentAlignment="Center"
+						Name="SvFile"></Button>
+			</StackPanel>
+		</StackPanel>
+		<Button Content="Set Regex"
+				Width="450"
+				HorizontalContentAlignment="Center"
+				Name="StRegex"
+				Click="MyClickEventHandler"></Button>
+	</StackPanel>
+
+    
+
+</Window>
