@@ -57,10 +57,19 @@ namespace Lab5.ViewModels
                 if (regularStart == true)
                 {
                     OutputText = "";
-                    foreach (Match match in Regex.Matches(InputText, RegularValue))
+                    try
                     {
-                        OutputText += match.Value + "\n";
+                        foreach (Match match in Regex.Matches(InputText, RegularValue))
+                        {
+                            OutputText += match.Value + "\n";
+                        }
                     }
+                    catch(Exception ex)
+                    {
+                        RegularValue = "";
+                        OutputText = "¬ведено неправильное регул€рное выражение";
+                    }
+                   
                 }
                 else
                 {
@@ -74,7 +83,7 @@ namespace Lab5.ViewModels
             get { return regularValue; }
             set
             {
-                regularValue = value;
+                this.RaiseAndSetIfChanged(ref regularValue, value);
             }
         }
 

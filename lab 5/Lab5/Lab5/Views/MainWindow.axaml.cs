@@ -26,9 +26,14 @@ namespace Lab5.Views
                 context.pathOpenFile = string.Join(@"\", path);
             };
 
-            this.Find<Button>("SvFile").Click += delegate
+            this.Find<Button>("SvFile").Click += async delegate
             {
-                string path = @"..\..\..\Text\Result.txt";
+                var Plan = new SaveFileDialog()
+                {
+                    Title = "Save File",
+                    Filters = null
+                }.ShowAsync((Window)this.VisualRoot);
+                string path = await Plan;
 
                 var context = this.DataContext as MainWindowViewModel;
                 context.pathSaveFile = path;
