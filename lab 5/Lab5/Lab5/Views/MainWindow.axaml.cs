@@ -23,7 +23,11 @@ namespace Lab5.Views
                 string[]? path = await Plan;
 
                 var context = this.DataContext as MainWindowViewModel;
-                context.pathOpenFile = string.Join(@"\", path);
+                if(path != null)
+                {
+                    context.pathOpenFile = string.Join(@"\", path);
+                }
+                
             };
 
             this.Find<Button>("SvFile").Click += async delegate
@@ -36,7 +40,11 @@ namespace Lab5.Views
                 string path = await Plan;
 
                 var context = this.DataContext as MainWindowViewModel;
-                context.pathSaveFile = path;
+                if(path != null)
+                {
+                    context.pathSaveFile = path;
+                }
+                
             };
             
 
