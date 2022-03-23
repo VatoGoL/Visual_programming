@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        x:Class="Lab_6.Views.ToDoView">
+	<UserControl.Styles>
+		<Style Selector="TextBlock.text_Class">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+		</Style>
+		<Style Selector="Button.button_Class">
+			<Setter Property="HorizontalAlignment" Value="Stretch"/>
+			<Setter Property="VerticalAlignment" Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid RowDefinitions="60*,420*,60*,60*">
+		<TextBox Classes="text_Class"
+				 Grid.Row="0"
+				 Watermark="Введите название заметки"
+				 Text="{Binding Title}"/>
+		<TextBox Classes="text_Class"
+				 Grid.Row="1"
+				 Watermark="Введите текст заметки"
+				 Text="{Binding Text}"/>
+		<Button Name="OK"
+				Classes="button_Class"
+				Grid.Row="2"
+				Content="OK"
+				Command="{Binding OK}"/>
+		<Button Name="Cancel"
+				Classes="button_Class"
+				Grid.Row="3"
+				Content="Cancel"
+				Command="{Binding Cancel}"/>
+	</Grid>
+</UserControl>

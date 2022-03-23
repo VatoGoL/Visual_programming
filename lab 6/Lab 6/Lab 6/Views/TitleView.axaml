@@ -1,0 +1,99 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+        x:Class="Lab_6.Views.TitleView">
+	<UserControl.Styles>
+		<Style Selector="TextBlock.text_Class">
+			<Setter Property="HorizontalAlignment"
+					Value="Stretch"/>
+			<Setter Property="VerticalAlignment"
+					Value="Stretch"/>
+			<Setter Property="Margin"
+					Value="10,0,0,0"/>
+		</Style>
+		<Style Selector="DatePicker.date_Class">
+			<Setter Property="HorizontalAlignment"
+					Value="Stretch"/>
+			<Setter Property="VerticalAlignment"
+					Value="Top"/>
+		</Style>
+		<Style Selector="Button.button_Class">
+			<Setter Property="HorizontalAlignment"
+					Value="Stretch"/>
+			<Setter Property="VerticalAlignment"
+					Value="Stretch"/>
+			<Setter Property="HorizontalContentAlignment"
+					Value="Center"/>
+			<Setter Property="VerticalContentAlignment"
+					Value="Center"/>
+		</Style>
+		<Style Selector="Image.img_Class">
+			<Setter Property="HorizontalAlignment"
+					Value="Stretch"/>
+			<Setter Property="VerticalAlignment"
+					Value="Stretch"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="50*"/>
+			<RowDefinition Height="500*"/>
+			<RowDefinition Height="50*"/>
+		</Grid.RowDefinitions>
+		<DatePicker Classes="date_Class"
+					Grid.Row="0"
+					Name="DatePickerFv"
+					SelectedDate="{Binding CurrentDate}"></DatePicker>
+		<ScrollViewer Grid.Row="1"
+					  VerticalScrollBarVisibility="Auto">
+			<ItemsControl Items="{Binding ItemsSelected}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid ColumnDefinitions="350*,50*,50*">
+							<Grid.RowDefinitions>
+								<RowDefinition MinHeight="30"
+											   Height="*"
+											   MaxHeight="50"/>
+							</Grid.RowDefinitions>
+							<Border Grid.Row="0"
+									Grid.Column="0"
+									BorderBrush="LightGray"
+									BorderThickness="1">
+								<TextBlock Classes="text_Class"
+										   Text="{Binding Title}"
+										   Focusable="False"/>
+							</Border>
+							<Button Name="ZoomButton"
+									Classes="button_Class"
+									Grid.Row="0"
+									Grid.Column="1"
+									Command="{Binding $parent[Window].DataContext.ButZoom}"
+									CommandParameter="{Binding}">
+								<Image Classes="img_Class" Source="/Assets/in_zoom.ico"></Image>
+							</Button>
+							<Button Name="DeleteButton"
+									Classes="button_Class"
+									Grid.Row="0"
+									Grid.Column="2"
+									Command="{Binding $parent[Window].DataContext.ButDelete}"
+									CommandParameter="{Binding}">
+								<Image Classes="img_Class"
+									   Source="/Assets/trash.ico"></Image>
+							</Button>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+		<Button Name="AddButton"
+				Classes="button_Class"
+				Grid.Row="2"
+				Command="{Binding $parent[Window].DataContext.ButAdd}">
+			<Image Classes="img_Class"
+				   Source="/Assets/add.ico"></Image>
+		</Button>
+	</Grid>
+</UserControl>
+
