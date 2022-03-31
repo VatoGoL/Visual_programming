@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="300"
+			 xmlns:vm="using:lab_7.ViewModels"
+			 Width="200" Height="300"
+			 x:Class="lab_7.Views.About"
+			 Title="About">
+	
+
+	<Grid RowDefinitions="*,*,*,*">
+		
+		<Border HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				BorderBrush="Gray"
+				BorderThickness="2"
+				Grid.Row="0">
+			<TextBlock HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   TextAlignment="Center"
+					   Text="Шульженко"/>
+		</Border>
+		<Border HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				BorderBrush="Gray"
+				BorderThickness="2"
+				Grid.Row="1">
+			<TextBlock HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   TextAlignment="Center"
+					   Text="Иван"/>
+		</Border>
+		<Border HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				BorderBrush="Gray"
+				BorderThickness="2"
+				Grid.Row="2">
+			<TextBlock HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   TextAlignment="Center"
+					   Text="Владимирович"/>
+		</Border>
+		<Border HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				BorderBrush="Gray"
+				BorderThickness="2"
+				Grid.Row="3">
+			<TextBlock HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   TextAlignment="Center"
+					   Text="ИП-011"/>
+		</Border>
+	</Grid>
+          
+	
+</Window>
